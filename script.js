@@ -5,52 +5,55 @@ const talleresData = [
         titulo: "Macarons Básicos",
         descripcion: "Aprende a crear los deliciosos macarons franceses desde cero. Técnicas básicas, merengue italiano y rellenos clásicos.",
         precio: 8500,
-        imagen: "https://images.unsplash.com/photo-1569864358642-9d1684040f43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+        imagen: "https://images.unsplash.com/photo-1569864358642-9d1684040f43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
     },
     {
         id: 2,
         titulo: "Macarons Avanzados",
         descripcion: "Perfecciona tu técnica con macarons de sabores únicos, colores vibrantes y decoraciones especiales.",
         precio: 12000,
-        imagen: "https://images.unsplash.com/photo-1569864358642-9d1684040f43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+        imagen: "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
     },
     {
         id: 3,
         titulo: "Decoración",
         descripcion: "Técnicas profesionales de decoración para pasteles y postres. Flores de buttercream, escritura y más.",
         precio: 9500,
-        imagen: "https://images.unsplash.com/photo-1569864358642-9d1684040f43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+        imagen: "https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
     },
     {
         id: 4,
         titulo: "Postres Sin Gluten",
         descripcion: "Deliciosos postres aptos para celíacos. Aprende técnicas y ingredientes alternativos sin sacrificar el sabor.",
         precio: 10500,
-        imagen: "https://images.unsplash.com/photo-1569864358642-9d1684040f43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+        imagen: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
     },
     {
         id: 5,
         titulo: "Chocolatería Artesanal",
         descripcion: "Desde bombones hasta trufas, descubre el arte de trabajar con chocolate de calidad premium.",
         precio: 11000,
-        imagen: "https://images.unsplash.com/photo-1569864358642-9d1684040f43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+        imagen: "https://images.unsplash.com/photo-1549903072-7e6e0bedb7fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
     }
 ];
 
 // Datos de la galería
 const galeriaData = [
-    "https://images.unsplash.com/photo-1569864358642-9d1684040f43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-    "https://images.unsplash.com/photo-1569864358642-9d1684040f43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-    "https://images.unsplash.com/photo-1569864358642-9d1684040f43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-    "https://images.unsplash.com/photo-1569864358642-9d1684040f43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-    "https://images.unsplash.com/photo-1569864358642-9d1684040f43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-    "https://images.unsplash.com/photo-1569864358642-9d1684040f43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+    "https://images.unsplash.com/photo-1569864358642-9d1684040f43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1549903072-7e6e0bedb7fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1571115764595-644a1f56a55c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
 ];
 
 // Variables globales
-let currentSlide = 0;
 let currentGaleriaSlide = 0;
 let cart = [];
+let currentPage = 1;
+let itemsPerPage = 6; // PC: 6 items (3x2), tablets: 4 items (2x2), mobile: 2 items (1x2)
+let sortOrder = 'desc'; // desc = mayor a menor, asc = menor a mayor
+let talleresSorted = [...talleresData];
 
 // Elementos del DOM
 const hamburger = document.getElementById('hamburger');
@@ -65,118 +68,135 @@ const imageModal = document.getElementById('image-modal');
 const modalImage = document.getElementById('modal-image');
 const closeModal = document.getElementById('close-modal');
 
-// Inicialización
-document.addEventListener('DOMContentLoaded', function() {
-    initializeTalleres();
-    initializeGaleria();
-    initializeEventListeners();
-    updateCartDisplay();
-    
-    // Smooth scrolling para los enlaces del nav
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
+// Función para actualizar items por página según el tamaño de pantalla
+function updateItemsPerPage() {
+    if (window.innerWidth <= 480) {
+        itemsPerPage = 2; // Móvil: 2 items (1x2)
+    } else if (window.innerWidth <= 768) {
+        itemsPerPage = 4; // Tablet: 4 items (2x2)
+    } else {
+        itemsPerPage = 6; // PC: 6 items (3x2)
+    }
+}
+
+// Función para ordenar talleres
+function sortTalleres() {
+    talleresSorted = [...talleresData].sort((a, b) => {
+        if (sortOrder === 'desc') {
+            return b.precio - a.precio; // Mayor a menor
+        } else {
+            return a.precio - b.precio; // Menor a mayor
+        }
     });
-});
+}
+
+// Función para renderizar talleres
+function renderTalleres() {
+    const grid = document.getElementById('talleres-grid');
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    const pageItems = talleresSorted.slice(startIndex, endIndex);
+    
+    grid.innerHTML = pageItems.map(taller => `
+        <div class="taller-card">
+            <div class="card-header">
+                <h3 class="card-title">${taller.titulo}</h3>
+            </div>
+            <div class="card-body">
+                <div class="card-image">
+                    <img src="${taller.imagen}" alt="${taller.titulo}" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgdmlld0JveD0iMCAwIDgwMCA2MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNjAwIiBmaWxsPSIjRjVGNUY1Ii8+CjxwYXRoIGQ9Ik0zNTAgMzAwTDQwMCAyNTBMNDUwIDMwMEw0NTAgMzUwTDM1MCAzNTBaIiBmaWxsPSIjREREIi8+CjxjaXJjbGUgY3g9IjM3NSIgY3k9IjI3NSIgcj0iMTUiIGZpbGw9IiNEREQiLz4KPC9zdmc+'; this.style.backgroundColor='#f8f9fa';">
+                </div>
+                <div class="card-content">
+                    <p class="card-description">${taller.descripcion}</p>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="card-price">$${taller.precio.toLocaleString()}</div>
+                <button class="btn-comprar" onclick="addToCart(${taller.id})">
+                    Comprar
+                </button>
+            </div>
+        </div>
+    `).join('');
+}
+
+// Función para renderizar paginación
+function renderPagination() {
+    const pagination = document.getElementById('pagination');
+    const totalPages = Math.ceil(talleresSorted.length / itemsPerPage);
+    
+    let paginationHTML = '';
+    
+    // Botón anterior
+    paginationHTML += `<button class="pagination-btn" onclick="changePage(${currentPage - 1})" ${currentPage === 1 ? 'disabled' : ''}>
+        <i class="fas fa-chevron-left"></i>
+    </button>`;
+    
+    // Números de página
+    for (let i = 1; i <= totalPages; i++) {
+        paginationHTML += `<button class="pagination-btn ${currentPage === i ? 'active' : ''}" onclick="changePage(${i})">${i}</button>`;
+    }
+    
+    // Botón siguiente
+    paginationHTML += `<button class="pagination-btn" onclick="changePage(${currentPage + 1})" ${currentPage === totalPages ? 'disabled' : ''}>
+        <i class="fas fa-chevron-right"></i>
+    </button>`;
+    
+    pagination.innerHTML = paginationHTML;
+}
+
+// Función para cambiar página
+function changePage(page) {
+    const totalPages = Math.ceil(talleresSorted.length / itemsPerPage);
+    if (page < 1 || page > totalPages) return;
+    
+    currentPage = page;
+    renderTalleres();
+    renderPagination();
+}
+
+// Función para manejar el sorting
+function handleSort() {
+    sortOrder = sortOrder === 'desc' ? 'asc' : 'desc';
+    const sortBtn = document.getElementById('sort-btn');
+    const icon = sortBtn.querySelector('i');
+    
+    // Actualizar icono
+    if (sortOrder === 'desc') {
+        icon.className = 'fas fa-sort-amount-down';
+    } else {
+        icon.className = 'fas fa-sort-amount-up';
+    }
+    
+    // Reorganizar y renderizar
+    sortTalleres();
+    currentPage = 1; // Volver a la primera página
+    renderTalleres();
+    renderPagination();
+}
 
 // Inicializar talleres
 function initializeTalleres() {
-    const container = document.getElementById('talleres-container');
+    updateItemsPerPage();
+    sortTalleres();
+    renderTalleres();
+    renderPagination();
     
-    talleresData.forEach(taller => {
-        const card = createTallerCard(taller);
-        container.appendChild(card);
-    });
-    
-    // Inicializar slider
-    initializeTalleresSlider();
+    // Event listener para el botón de sort
+    document.getElementById('sort-btn').addEventListener('click', handleSort);
 }
 
-// Crear card de taller
-function createTallerCard(taller) {
-    const card = document.createElement('div');
-    card.className = 'taller-card';
-    card.innerHTML = `
-        <div class="card-header">
-            <h3 class="card-title">${taller.titulo}</h3>
-        </div>
-        <div class="card-body">
-            <div class="card-image">
-                <img src="${taller.imagen}" alt="${taller.titulo}">
-            </div>
-            <div class="card-content">
-                <p class="card-description">${taller.descripcion}</p>
-                <div class="card-footer">
-                    <span class="card-price">$${taller.precio.toLocaleString()}</span>
-                    <button class="btn-comprar" onclick="addToCart(${taller.id})">
-                        Comprar
-                    </button>
-                </div>
-            </div>
-        </div>
-    `;
-    return card;
-}
-
-// Inicializar slider de talleres
-function initializeTalleresSlider() {
-    const container = document.getElementById('talleres-container');
-    const prevBtn = document.getElementById('prev-btn');
-    const nextBtn = document.getElementById('next-btn');
+// Actualizar en resize
+window.addEventListener('resize', () => {
+    const oldItemsPerPage = itemsPerPage;
+    updateItemsPerPage();
     
-    let visibleCards = window.innerWidth > 768 ? 3 : 1;
-    let maxSlide = Math.max(0, talleresData.length - visibleCards);
-    
-    prevBtn.addEventListener('click', () => {
-        if (currentSlide > 0) {
-            currentSlide--;
-            updateSliderPosition();
-        }
-    });
-    
-    nextBtn.addEventListener('click', () => {
-        if (currentSlide < maxSlide) {
-            currentSlide++;
-            updateSliderPosition();
-        }
-    });
-    
-    function updateSliderPosition() {
-        if (window.innerWidth > 768) {
-            const cardWidth = 370; // width + gap
-            const offset = currentSlide * cardWidth;
-            container.style.transform = `translateX(-${offset}px)`;
-        } else {
-            const cardWidth = window.innerWidth - 40; // full width minus padding
-            const offset = currentSlide * cardWidth;
-            container.style.transform = `translateX(-${offset}px)`;
-        }
-        
-        // Actualizar estado de los botones
-        prevBtn.style.opacity = currentSlide === 0 ? '0.5' : '1';
-        nextBtn.style.opacity = currentSlide === maxSlide ? '0.5' : '1';
+    if (oldItemsPerPage !== itemsPerPage) {
+        currentPage = 1; // Reiniciar a la primera página
+        renderTalleres();
+        renderPagination();
     }
-    
-    // Responsive updates
-    window.addEventListener('resize', () => {
-        visibleCards = window.innerWidth > 768 ? 3 : 1;
-        maxSlide = Math.max(0, talleresData.length - visibleCards);
-        currentSlide = Math.min(currentSlide, maxSlide);
-        updateSliderPosition();
-    });
-    
-    // Inicializar posición
-    updateSliderPosition();
-}
-
+});
 // Inicializar galería
 function initializeGaleria() {
     const container = document.getElementById('galeria-container');
@@ -184,7 +204,7 @@ function initializeGaleria() {
     galeriaData.forEach((imagen, index) => {
         const item = document.createElement('div');
         item.className = 'galeria-item';
-        item.innerHTML = `<img src="${imagen}" alt="Galería ${index + 1}">`;
+        item.innerHTML = `<img src="${imagen}" alt="Galería ${index + 1}" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgdmlld0JveD0iMCAwIDgwMCA2MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNjAwIiBmaWxsPSIjRjVGNUY1Ii8+CjxwYXRoIGQ9Ik0zNTAgMzAwTDQwMCAyNTBMNDUwIDMwMEw0NTAgMzUwTDM1MCAzNTBaIiBmaWxsPSIjREREIi8+CjxjaXJjbGUgY3g9IjM3NSIgY3k9IjI3NSIgcj0iMTUiIGZpbGw9IiNEREQiLz4KPC9zdmc+'; this.style.backgroundColor='#f8f9fa';">`;
         item.addEventListener('click', () => openImageModal(imagen));
         container.appendChild(item);
     });
@@ -192,6 +212,7 @@ function initializeGaleria() {
     // Inicializar slider de galería
     initializeGaleriaSlider();
 }
+
 
 // Inicializar slider de galería
 function initializeGaleriaSlider() {
@@ -301,14 +322,12 @@ function initializeEventListeners() {
     
     // Modal de imagen
     closeModal.addEventListener('click', () => {
-        imageModal.classList.remove('active');
-        document.body.style.overflow = 'auto';
+        closeImageModal();
     });
     
     imageModal.addEventListener('click', (e) => {
         if (e.target === imageModal) {
-            imageModal.classList.remove('active');
-            document.body.style.overflow = 'auto';
+            closeImageModal();
         }
     });
     
@@ -316,10 +335,19 @@ function initializeEventListeners() {
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
             cartModal.classList.remove('active');
-            imageModal.classList.remove('active');
+            closeImageModal();
             document.body.style.overflow = 'auto';
         }
     });
+}
+
+// Función para cerrar el modal de imagen con transición
+function closeImageModal() {
+    imageModal.style.opacity = '0';
+    setTimeout(() => {
+        imageModal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }, 300);
 }
 
 // Agregar al carrito
@@ -393,8 +421,17 @@ function removeFromCart(tallerId) {
 // Abrir modal de imagen
 function openImageModal(imageSrc) {
     modalImage.src = imageSrc;
+    modalImage.onerror = function() {
+        this.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgdmlld0JveD0iMCAwIDgwMCA2MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNjAwIiBmaWxsPSIjRjVGNUY1Ii8+CjxwYXRoIGQ9Ik0zNTAgMzAwTDQwMCAyNTBMNDUwIDMwMEw0NTAgMzUwTDM1MCAzNTBaIiBmaWxsPSIjREREIi8+CjxjaXJjbGUgY3g9IjM3NSIgY3k9IjI3NSIgcj0iMTUiIGZpbGw9IiNEREQiLz4KPC9zdmc+';
+        this.style.backgroundColor = '#f8f9fa';
+    };
     imageModal.classList.add('active');
     document.body.style.overflow = 'hidden';
+    
+    // Pequeño delay para que la transición se vea correctamente
+    setTimeout(() => {
+        imageModal.style.opacity = '1';
+    }, 10);
 }
 
 // Mostrar notificación
@@ -483,5 +520,34 @@ document.addEventListener('DOMContentLoaded', function() {
     images.forEach(src => {
         const img = new Image();
         img.src = src;
+    });
+});
+
+// Inicialización
+document.addEventListener('DOMContentLoaded', function() {
+    initializeTalleres();
+    initializeGaleria();
+    initializeEventListeners();
+    updateCartDisplay();
+    
+    // Smooth scrolling para los enlaces del nav
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const target = document.querySelector(targetId);
+            if (target) {
+                // Calcular la posición del final de la sección anterior
+                const targetRect = target.getBoundingClientRect();
+                const targetTop = window.pageYOffset + targetRect.top;
+                const navHeight = document.querySelector('.navbar').offsetHeight;
+                
+                // Scroll al final de la sección anterior (inicio de la sección actual menos la altura del nav)
+                window.scrollTo({
+                    top: targetTop - navHeight - 20, // 20px de espacio adicional
+                    behavior: 'smooth'
+                });
+            }
+        });
     });
 });

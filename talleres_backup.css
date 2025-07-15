@@ -1,0 +1,83 @@
+/* BACKUP - CSS Original de Talleres */
+
+/* Talleres Section */
+.talleres-section {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #fafafa 0%, #f8f9fa 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.talleres-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 15% 20%, rgba(233, 30, 99, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 85% 80%, rgba(248, 187, 217, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.3) 0%, transparent 30%);
+    pointer-events: none;
+}
+
+.talleres-section::after {
+    content: '';
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    width: 200px;
+    height: 200px;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 10 Q80 30 90 50 Q80 70 50 90 Q20 70 10 50 Q20 30 50 10" fill="none" stroke="%23f8bbd9" stroke-width="0.5" opacity="0.3"/><circle cx="50" cy="50" r="20" fill="none" stroke="%23e91e63" stroke-width="0.3" opacity="0.2"/></svg>');
+    animation: rotate 20s linear infinite;
+    z-index: 1;
+}
+
+.talleres-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.talleres-slider {
+    position: relative;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+.slider-container {
+    display: flex;
+    gap: 2rem;
+    transition: transform 0.5s ease;
+}
+
+.slider-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 100px);
+    left: 50px;
+    pointer-events: none;
+}
+
+.slider-btn {
+    background: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    pointer-events: auto;
+}
+
+.slider-btn:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: scale(1.1);
+}

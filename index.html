@@ -58,26 +58,24 @@
                 <img src="images/luciana_logo_horizontal.png" alt="Delicias Luciana" class="hero-logo-img">
             </div>
             <p class="hero-subtitle">Pastelería artesanal con amor y dedicación</p>
-            <a href="#talleres" class="btn-primary">Conoce nuestros talleres</a>
         </div>
     </section>
 
     <!-- Talleres Section -->
     <section id="talleres" class="talleres-section">
         <div class="container">
-            <h2 class="section-title">Nuestros Talleres</h2>
-            <div class="talleres-slider">
-                <div class="slider-container" id="talleres-container">
-                    <!-- Los talleres se cargarán dinámicamente aquí -->
-                </div>
-                <div class="slider-nav">
-                    <button class="slider-btn prev" id="prev-btn">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <button class="slider-btn next" id="next-btn">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
-                </div>
+            <h2 class="section-title">Talleres</h2>
+            <div class="talleres-filters">
+                <button class="sort-btn" id="sort-btn">
+                    <i class="fas fa-sort-amount-down"></i>
+                    <span>Precio</span>
+                </button>
+            </div>
+            <div class="talleres-grid" id="talleres-grid">
+                <!-- Los talleres se cargarán dinámicamente aquí -->
+            </div>
+            <div class="pagination" id="pagination">
+                <!-- La paginación se generará aquí -->
             </div>
         </div>
     </section>
@@ -87,20 +85,20 @@
         <div class="container">
             <h2 class="section-title">Galería</h2>
             <p class="galeria-description">
-                Descubre algunos de nuestros trabajos más destacados. Cada creación es única y especial, elaborada con técnicas artesanales y mucho amor por los detalles.
+                Descubre algunos de mis trabajos más destacados. Cada creación es única y especial, elaborada con técnicas artesanales y mucho amor por los detalles.
             </p>
             <div class="galeria-slider">
                 <div class="galeria-container" id="galeria-container">
                     <!-- Las fotos se cargarán aquí -->
                 </div>
-                <div class="galeria-nav">
-                    <button class="galeria-btn prev" id="galeria-prev">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <button class="galeria-btn next" id="galeria-next">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
-                </div>
+            </div>
+            <div class="galeria-nav">
+                <button class="galeria-btn prev" id="galeria-prev">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="galeria-btn next" id="galeria-next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
         </div>
     </section>
@@ -108,13 +106,13 @@
     <!-- Sobre Mí Section -->
     <section id="sobre-mi" class="sobre-mi-section">
         <div class="container">
+            <h2 class="section-title">Sobre Mí</h2>
             <div class="sobre-mi-content">
                 <div class="sobre-mi-imagen">
                     <img src="images/luciana.jpeg" alt="Luciana" class="sobre-mi-foto">
                     <div class="imagen-decoration"></div>
                 </div>
                 <div class="sobre-mi-texto">
-                    <h2 class="section-title">Sobre Mí</h2>
                     <p>Hola, soy Luciana, una pastelera apasionada que comenzó este hermoso camino hace más de 10 años. Mi amor por la repostería nació en la cocina de mi abuela, donde aprendí que cada postre debe ser preparado con amor y dedicación.</p>
                     <p>En mis talleres, comparto no solo técnicas y recetas, sino también la pasión por crear momentos dulces que perduran en el tiempo. Cada macaron, cada pastel, es una pequeña obra de arte que lleva consigo toda mi experiencia y cariño.</p>
                     <p>Te invito a sumergirte en el maravilloso mundo de la pastelería artesanal, donde cada detalle cuenta y cada sabor cuenta una historia.</p>
