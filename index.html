@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Delicias Luciana - Pastelería artesanal con talleres de repostería, macarons y decoración. Aprende con una experta pastelera.">
+    <meta name="keywords" content="pastelería, talleres, macarons, repostería, decoración, pasteles, chocolatería">
+    <meta name="author" content="Delicias Luciana">
+    <title>Delicias Luciana - Pastelería Artesanal</title>
+    <link rel="icon" type="image/png" href="images/luciana_logo.png">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="images/luciana_logo.png" alt="Delicias Luciana" class="logo-img">
+            </div>
+            <div class="nav-menu">
+                <a href="#talleres" class="nav-link">Talleres</a>
+                <a href="#galeria" class="nav-link">Galería</a>
+                <a href="#sobre-mi" class="nav-link">Sobre Mí</a>
+                <div class="cart-icon" id="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cart-count">0</span>
+                </div>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <!-- Elementos decorativos fijos -->
+        <div class="floating-macaron"></div>
+        <div class="floating-macaron"></div>
+        <div class="floating-macaron"></div>
+        <div class="floating-macaron"></div>
+        
+        <div class="sparkles">
+            <div class="sparkle"></div>
+            <div class="sparkle"></div>
+            <div class="sparkle"></div>
+            <div class="sparkle"></div>
+            <div class="sparkle"></div>
+            <div class="sparkle"></div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-logo">
+                <img src="images/luciana_logo_horizontal.png" alt="Delicias Luciana" class="hero-logo-img">
+            </div>
+            <p class="hero-subtitle">Pastelería artesanal con amor y dedicación</p>
+            <a href="#talleres" class="btn-primary">Conoce nuestros talleres</a>
+        </div>
+    </section>
+
+    <!-- Talleres Section -->
+    <section id="talleres" class="talleres-section">
+        <div class="container">
+            <h2 class="section-title">Nuestros Talleres</h2>
+            <div class="talleres-slider">
+                <div class="slider-container" id="talleres-container">
+                    <!-- Los talleres se cargarán dinámicamente aquí -->
+                </div>
+                <div class="slider-nav">
+                    <button class="slider-btn prev" id="prev-btn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="slider-btn next" id="next-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería Section -->
+    <section id="galeria" class="galeria-section">
+        <div class="container">
+            <h2 class="section-title">Galería</h2>
+            <p class="galeria-description">
+                Descubre algunos de nuestros trabajos más destacados. Cada creación es única y especial, elaborada con técnicas artesanales y mucho amor por los detalles.
+            </p>
+            <div class="galeria-slider">
+                <div class="galeria-container" id="galeria-container">
+                    <!-- Las fotos se cargarán aquí -->
+                </div>
+                <div class="galeria-nav">
+                    <button class="galeria-btn prev" id="galeria-prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="galeria-btn next" id="galeria-next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Mí Section -->
+    <section id="sobre-mi" class="sobre-mi-section">
+        <div class="container">
+            <div class="sobre-mi-content">
+                <div class="sobre-mi-imagen">
+                    <img src="images/luciana.jpeg" alt="Luciana" class="sobre-mi-foto">
+                    <div class="imagen-decoration"></div>
+                </div>
+                <div class="sobre-mi-texto">
+                    <h2 class="section-title">Sobre Mí</h2>
+                    <p>Hola, soy Luciana, una pastelera apasionada que comenzó este hermoso camino hace más de 10 años. Mi amor por la repostería nació en la cocina de mi abuela, donde aprendí que cada postre debe ser preparado con amor y dedicación.</p>
+                    <p>En mis talleres, comparto no solo técnicas y recetas, sino también la pasión por crear momentos dulces que perduran en el tiempo. Cada macaron, cada pastel, es una pequeña obra de arte que lleva consigo toda mi experiencia y cariño.</p>
+                    <p>Te invito a sumergirte en el maravilloso mundo de la pastelería artesanal, donde cada detalle cuenta y cada sabor cuenta una historia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <div class="contact-links">
+                        <a href="https://wa.me/59898199850" class="contact-link whatsapp" target="_blank">
+                            <div class="contact-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="contact-info">
+                                <span class="contact-label">WhatsApp</span>
+                                <span class="contact-value">+598 98 199 850</span>
+                            </div>
+                        </a>
+                        <a href="https://www.instagram.com/delicias_luciana_/" class="contact-link instagram" target="_blank">
+                            <div class="contact-icon">
+                                <i class="fab fa-instagram"></i>
+                            </div>
+                            <div class="contact-info">
+                                <span class="contact-label">Instagram</span>
+                                <span class="contact-value">@delicias_luciana_</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Delicias Luciana. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Carrito Modal -->
+    <div class="cart-modal" id="cart-modal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h3>Carrito de Compras</h3>
+                <button class="close-cart" id="close-cart">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="cart-items" id="cart-items">
+                <!-- Los items del carrito se mostrarán aquí -->
+            </div>
+            <div class="cart-total">
+                <h4>Total: $<span id="cart-total">0</span></h4>
+                <button class="btn-checkout">Finalizar Compra</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para imagen expandida -->
+    <div class="image-modal" id="image-modal">
+        <div class="modal-content">
+            <button class="close-modal" id="close-modal">
+                <i class="fas fa-times"></i>
+            </button>
+            <img src="" alt="" id="modal-image">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
