@@ -1,0 +1,102 @@
+/* WhatsApp Float Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    box-shadow: 0 4px 15px rgba(196, 86, 122, 0.4);
+    cursor: pointer;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+.whatsapp-float:hover {
+    background: var(--secondary-color);
+    box-shadow: 0 4px 18px rgba(196, 86, 122, 0.4);
+    color: white;
+    text-decoration: none;
+}
+
+.whatsapp-float i {
+    font-size: 28px;
+}
+
+.whatsapp-float span {
+    display: none;
+}
+
+.whatsapp-float .tooltip {
+    position: absolute;
+    bottom: 70px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    pointer-events: none;
+    white-space: nowrap;
+    font-weight: 500;
+}
+
+.whatsapp-float:hover .tooltip {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.whatsapp-float.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(100px);
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 4px 15px rgba(196, 86, 122, 0.4);
+    }
+    50% {
+        box-shadow: 0 4px 15px rgba(196, 86, 122, 0.6), 0 0 20px rgba(196, 86, 122, 0.3);
+    }
+    100% {
+        box-shadow: 0 4px 15px rgba(196, 86, 122, 0.4);
+    }
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .whatsapp-float {
+        bottom: 15px;
+        right: 15px;
+        width: 55px;
+        height: 55px;
+    }
+    
+    .whatsapp-float i {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .whatsapp-float {
+        bottom: 10px;
+        right: 10px;
+        width: 50px;
+        height: 50px;
+    }
+    
+    .whatsapp-float i {
+        font-size: 22px;
+    }
+}

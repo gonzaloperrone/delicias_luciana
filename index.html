@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delicias Luciana - Pastelería Artesanal</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="img/luciana_logo.png">
+    <link rel="shortcut icon" type="image/png" href="img/luciana_logo.png">
+    <link rel="apple-touch-icon" href="img/luciana_logo.png">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/talleres.css">
+    <link rel="stylesheet" href="css/galeria.css">
+    <link rel="stylesheet" href="css/sobre-mi.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/carrito.css">
+    <link rel="stylesheet" href="css/whatsapp-float.css">
+    <link rel="stylesheet" href="css/loader.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+
+<body>
+    <!-- Page Loader -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-content">
+            <img src="img/luciana_logo.png" alt="Delicias Luciana" class="loader-logo">
+            <div class="loader-spinner"></div>
+            <div class="loader-text">Delicias Luciana</div>
+            <div class="loader-subtitle">Preparando algo dulce para ti...</div>
+            <div class="loader-progress">
+                <div class="loader-progress-bar" id="loaderProgress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="img/luciana_logo_horizontal.png" alt="Delicias Luciana" class="logo-img">
+            </div>
+            <nav class="nav" id="nav">
+                <ul class="nav-list">
+                    <li><a href="#talleres">Talleres</a></li>
+                    <li><a href="#galeria">Galería</a></li>
+                    <li><a href="#sobre-mi">Sobre Mí</a></li>
+                </ul>
+            </nav>
+            <div class="header-right">
+                <div class="carrito-icon" id="carritoIcon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="carrito-count" id="carritoCount">0</span>
+                </div>
+                <button class="nav-toggle" id="navToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title fade-in-up">Pastelería Artesanal</h1>
+            <p class="hero-subtitle fade-in-up">Creando momentos dulces que permanecen en el corazón</p>
+            <div class="hero-decoration fade-in-up">
+                <span class="hero-accent">Take Away | Pedidos por Encargo</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Separator -->
+    <div class="section-separator"></div>
+
+    <!-- Talleres Section -->
+    <section id="talleres" class="talleres">
+        <div class="container">
+            <h2 class="section-title fade-in-up"><span>Talleres</span></h2>
+            <div class="talleres-grid stagger-parent" id="talleresGrid">
+                <!-- Los talleres se cargarán dinámicamente desde JSON -->
+            </div>
+            <div class="talleres-pagination" id="talleresPagination">
+                <!-- La paginación se cargará dinámicamente -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Separator -->
+    <div class="section-separator"></div>
+
+    <!-- Galería Section -->
+    <section id="galeria" class="galeria">
+        <div class="container">
+            <h2 class="section-title fade-in-up"><span>Galería</span></h2>
+            <div class="galeria-grid stagger-parent" id="galeriaGrid">
+                <!-- Las fotos se cargarán dinámicamente desde JSON -->
+            </div>
+            <div class="galeria-pagination" id="galeriaPagination">
+                <!-- La paginación se cargará dinámicamente -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal para galería -->
+    <div id="galeriaModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <img id="modalImg" src="" alt="">
+        </div>
+    </div>
+
+    <!-- Section Separator -->
+    <div class="section-separator"></div>
+
+    <!-- Sobre Mí Section -->
+    <section id="sobre-mi" class="sobre-mi">
+        <div class="container">
+            <h2 class="section-title fade-in-up"><span>Sobre Mí</span></h2>
+            <div class="sobre-mi-content">
+                <div class="sobre-mi-image fade-in-left">
+                    <img src="img/sobreMi.jpeg" alt="Luciana">
+                </div>
+                <div class="sobre-mi-text fade-in-right">
+                    <h3>Luciana</h3>
+                    <p>Una apasionada repostera con más de 10 años de experiencia creando dulces momentos.
+                        Mi amor por la repostería comenzó en la cocina de mi abuela, donde aprendí que cada postre
+                        cuenta una historia especial.</p>
+                    <p>En mis talleres, comparto no solo técnicas y recetas, sino también la pasión y el amor que pongo
+                        en cada creación. Creo firmemente que la repostería es un arte que conecta corazones y crea
+                        recuerdos inolvidables.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contacto" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h4>Ubicación</h4>
+                    <p>
+                        <i class="fas fa-map-marker-alt"></i> 
+                        <a href="https://maps.google.com/?q=Complejo+Jose+Pedro+Varela+Zona+3+Uruguay" 
+                           target="_blank" 
+                           class="location-link">
+                            Complejo Jose Pedro Varela - Zona 3
+                        </a>
+                    </p>
+                    <p><i class="fas fa-clock"></i> Jueves a Sábado: 16:00 - 18:00</p>
+                    <p><i class="fas fa-calendar-check"></i> Pedidos con 48hs de anticipación</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Contacto</h4>
+                    <div class="social-links">
+                        <a href="https://wa.me/59898199850" target="_blank" class="social-link whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://www.instagram.com/delicias_luciana_?igsh=MWhpZnhsZzByNGM5ZA==" target="_blank" class="social-link instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Carrito Modal -->
+    <div id="carritoModal" class="carrito-modal">
+        <div class="carrito-content">
+            <div class="carrito-header">
+                <h3>Mi Carrito</h3>
+                <span class="carrito-close" id="carritoClose">&times;</span>
+            </div>
+            <div class="carrito-items" id="carritoItems">
+                <!-- Los items del carrito se cargarán dinámicamente -->
+            </div>
+            <div class="carrito-total">
+                <h4>Total: $<span id="carritoTotal">0</span></h4>
+            </div>
+            <div class="carrito-actions">
+                <button class="btn-vaciar" id="vaciarCarrito">Vaciar Carrito</button>
+                <button class="btn-comprar">Finalizar Compra</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/59898199850?text=Hola Luciana! Me interesa información sobre los talleres de repostería 🧁" 
+       target="_blank" 
+       class="whatsapp-float" 
+       id="whatsappFloat">
+        <i class="fab fa-whatsapp"></i>
+        <div class="tooltip">¡Hablá conmigo directamente!</div>
+    </a>
+
+    <!-- JavaScript Files -->
+    <script src="js/data.js"></script>
+    <script src="js/carrito.js"></script>
+    <script src="js/talleres.js"></script>
+    <script src="js/galeria.js"></script>
+    <script src="js/enhanced-features.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
