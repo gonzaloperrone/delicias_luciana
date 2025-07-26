@@ -196,7 +196,83 @@ class Carrito {
             return;
         }
 
-        // Crear mensaje para WhatsApp
+        // Verificar si solo hay talleres online
+        const soloTalleresOnline = this.items.every(item => item.tipo === 'online');
+
+        if (soloTalleresOnline) {
+            this.procesarCompraOnline();
+        } else {
+            this.procesarCompraTradicional();
+        }
+    }
+
+    procesarCompraOnline() {
+        // Solicitar email para envío de códigos
+        const email = prompt('Ingresa tu email para recibir los códigos de acceso a los talleres:');
+        
+        if (!email) {
+            this.mostrarMensaje('Email requerido para talleres online', 'warning');
+            return;
+        }
+
+        if (!this.validarEmail(email)) {
+            this.mostrarMensaje('Por favor ingresa un email válido', 'warning');
+            return;
+        }
+
+        let codigosGenerados = [];
+        let mensajeCodigos = '🎥 *Códigos de Acceso a Talleres Online*\n\n';
+        
+        // Generar códigos para cada taller
+        this.items.forEach(item => {
+            const codigo = videoAccess.purchaseCourse(item.id);
+            codigosGenerados.push({
+                taller: item.titulo,
+                codigo: codigo,
+                precio: item.precio
+            });
+            
+            // Simular envío de email
+            videoAccess.sendAccessEmail(item.id, email);
+        });
+
+        // Crear mensaje con códigos
+        codigosGenerados.forEach((item, index) => {
+            mensajeCodigos += `${index + 1}. *${item.taller}*\n`;
+            mensajeCodigos += `   🔑 Código: \`${item.codigo}\`\n`;
+            mensajeCodigos += `   💰 Precio: $${item.precio}\n\n`;
+        });
+
+        const total = this.calcularTotal();
+        mensajeCodigos += `💰 *Total: $${total}*\n\n`;
+        mensajeCodigos += `📧 *Email:* ${email}\n`;
+        mensajeCodigos += `📅 *Fecha:* ${new Date().toLocaleDateString('es-UY')}\n\n`;
+        mensajeCodigos += `🎬 *Accede a tus videos en:*\n`;
+        mensajeCodigos += `${window.location.origin}/video-access.html\n\n`;
+        mensajeCodigos += `✅ *Instrucciones:*\n`;
+        mensajeCodigos += `1. Ve al enlace de acceso\n`;
+        mensajeCodigos += `2. Ingresa tu código\n`;
+        mensajeCodigos += `3. ¡Disfruta tu taller!\n\n`;
+        mensajeCodigos += `💬 *Soporte:* ¿Dudas? ¡Contáctame por WhatsApp!\n\n`;
+        mensajeCodigos += `¡Gracias por elegir Delicias Luciana! 🧁`;
+
+        // Enviar por WhatsApp para confirmación
+        const whatsappUrl = `https://wa.me/59898199850?text=${encodeURIComponent(mensajeCodigos)}`;
+        
+        // Mostrar códigos al usuario
+        this.mostrarModalCodigos(codigosGenerados, email);
+        
+        // Abrir WhatsApp en segundo plano
+        setTimeout(() => {
+            window.open(whatsappUrl, '_blank');
+        }, 2000);
+
+        // Limpiar carrito
+        this.vaciarCarrito();
+    }
+
+    procesarCompraTradicional() {
+        // Lógica original para productos físicos
         let mensaje = `🧁 *Nuevo pedido desde Delicias Luciana*\n\n`;
         mensaje += `📋 *Detalle del pedido:*\n`;
         
@@ -222,6 +298,64 @@ class Carrito {
         }, 1500);
     }
 
+    mostrarModalCodigos(codigos, email) {
+        // Crear modal personalizado para mostrar códigos
+        const modalHTML = `
+            <div class="modal-codigos" id="modalCodigos">
+                <div class="modal-codigos-content">
+                    <div class="modal-header">
+                        <h3>🎉 ¡Compra Exitosa!</h3>
+                        <p>Tus códigos de acceso han sido generados</p>
+                    </div>
+                    <div class="modal-body">
+                        <div class="email-info">
+                            <i class="fas fa-envelope"></i>
+                            <span>Códigos enviados a: <strong>${email}</strong></span>
+                        </div>
+                        <div class="codigos-list">
+                            ${codigos.map(item => `
+                                <div class="codigo-item">
+                                    <h4>${item.taller}</h4>
+                                    <div class="codigo-box">
+                                        <span class="codigo">${item.codigo}</span>
+                                        <button onclick="copiarCodigo('${item.codigo}')" class="btn-copy">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                        <div class="acceso-info">
+                            <p><strong>Accede a tus videos en:</strong></p>
+                            <div class="url-box">
+                                <span>${window.location.origin}/video-access.html</span>
+                                <button onclick="abrirAcceso()" class="btn-acceso">
+                                    <i class="fas fa-play"></i> Ir a Videos
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button onclick="cerrarModalCodigos()" class="btn-cerrar">
+                            Entendido
+                        </button>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        // Agregar modal al DOM
+        document.body.insertAdjacentHTML('beforeend', modalHTML);
+        
+        // Mostrar modal
+        document.getElementById('modalCodigos').style.display = 'flex';
+    }
+
+    validarEmail(email) {
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(email);
+    }
+
     calcularTotal() {
         return this.items.reduce((total, item) => total + parseFloat(item.precio), 0);
     }
@@ -229,3 +363,41 @@ class Carrito {
 
 // Inicializar carrito
 const carrito = new Carrito();
+
+// Funciones globales para el modal de códigos
+window.copiarCodigo = function(codigo) {
+    navigator.clipboard.writeText(codigo).then(function() {
+        // Mostrar feedback visual
+        const btn = event.target.closest('.btn-copy');
+        const originalHTML = btn.innerHTML;
+        btn.innerHTML = '<i class="fas fa-check"></i>';
+        btn.style.background = '#4caf50';
+        
+        setTimeout(() => {
+            btn.innerHTML = originalHTML;
+            btn.style.background = '';
+        }, 1000);
+    }).catch(function() {
+        // Fallback para navegadores que no soportan clipboard API
+        const textArea = document.createElement('textarea');
+        textArea.value = codigo;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        
+        // Mostrar mensaje
+        alert('Código copiado: ' + codigo);
+    });
+};
+
+window.abrirAcceso = function() {
+    window.open('video-access.html', '_blank');
+};
+
+window.cerrarModalCodigos = function() {
+    const modal = document.getElementById('modalCodigos');
+    if (modal) {
+        modal.remove();
+    }
+};

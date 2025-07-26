@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="css/whatsapp-float.css">
     <link rel="stylesheet" href="css/loader.css">
     <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/auth.css">
 </head>
 
 <body>
@@ -88,11 +89,18 @@
     <!-- Talleres Section -->
     <section id="talleres" class="talleres">
         <div class="container">
-            <h2 class="section-title fade-in-up"><span>Talleres</span></h2>
-            <div class="talleres-grid stagger-parent" id="talleresGrid">
-                <!-- Los talleres se cargarán dinámicamente desde JSON -->
+            <div class="talleres-header">
+                <h2 class="section-title fade-in-up"><span>Talleres</span></h2>
+                <div class="talleres-controls">
+                    <button id="sortBtn" class="sort-btn" onclick="toggleSortOrder()">
+                        <i class="fas fa-sort-amount-down"></i>
+                    </button>
+                </div>
             </div>
-            <div class="talleres-pagination" id="talleresPagination">
+            <div class="talleres-grid stagger-parent" id="talleres-container">
+                <!-- Los talleres se cargarán dinámicamente desde JavaScript -->
+            </div>
+            <div class="talleres-pagination" id="talleres-pagination">
                 <!-- La paginación se cargará dinámicamente -->
             </div>
         </div>
@@ -198,6 +206,76 @@
         </div>
     </div>
 
+    <!-- Modal container for talleres -->
+    <div id="modalContainer"></div>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="auth-modal">
+        <div class="auth-modal-content">
+            <span class="auth-close">&times;</span>
+            <div class="auth-tabs">
+                <button class="auth-tab-btn active" data-tab="login">Iniciar Sesión</button>
+                <button class="auth-tab-btn" data-tab="register">Registrarse</button>
+            </div>
+            
+            <!-- Login Form -->
+            <div id="loginForm" class="auth-form active">
+                <h3>Inicia Sesión</h3>
+                
+                <!-- Demo User Section -->
+                <div class="demo-user-section">
+                    <h4>🎯 Usuario de Prueba</h4>
+                    <p>o prueba con una cuenta demo</p>
+                    <div class="demo-credentials">
+                        <div class="credential-item">
+                            <span class="credential-label">📧 Email:</span>
+                            <span class="credential-value">maria@demo.com</span>
+                        </div>
+                        <div class="credential-item">
+                            <span class="credential-label">🔐 Contraseña:</span>
+                            <span class="credential-value">123456</span>
+                        </div>
+                    </div>
+                    <button type="button" class="demo-try-button" onclick="fillDemoCredentials()">Probar Ahora</button>
+                </div>
+                
+                <div class="auth-input-group">
+                    <label>Email:</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                <div class="auth-input-group">
+                    <label>Contraseña:</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <button type="button" class="auth-btn-primary" id="loginSubmit">Iniciar Sesión</button>
+                <div id="loginError" class="auth-error"></div>
+            </div>
+            
+            <!-- Register Form -->
+            <div id="registerForm" class="auth-form">
+                <h3>Crear Cuenta</h3>
+                <div class="auth-input-group">
+                    <label>Nombre:</label>
+                    <input type="text" id="registerName" required>
+                </div>
+                <div class="auth-input-group">
+                    <label>Email:</label>
+                    <input type="email" id="registerEmail" required>
+                </div>
+                <div class="auth-input-group">
+                    <label>Contraseña:</label>
+                    <input type="password" id="registerPassword" required>
+                </div>
+                <div class="auth-input-group">
+                    <label>Confirmar Contraseña:</label>
+                    <input type="password" id="registerConfirmPassword" required>
+                </div>
+                <button type="button" class="auth-btn-primary" id="registerSubmit">Crear Cuenta</button>
+                <div id="registerError" class="auth-error"></div>
+            </div>
+        </div>
+    </div>
+
     <!-- WhatsApp Float Button -->
     <a href="https://wa.me/59898199850?text=Hola Luciana! Me interesa información sobre los talleres de repostería 🧁" 
        target="_blank" 
@@ -214,6 +292,31 @@
     <script src="js/galeria.js"></script>
     <script src="js/enhanced-features.js"></script>
     <script src="js/main.js"></script>
+    
+    <!-- Script de inicialización forzada -->
+    <script>
+        // Forzar inicialización después de que todos los scripts se carguen
+        window.addEventListener('load', function() {
+            console.log('=== PÁGINA COMPLETAMENTE CARGADA ===');
+            
+            // Verificar que los datos estén disponibles
+            if (typeof talleresData !== 'undefined') {
+                console.log('talleresData disponible:', talleresData.length, 'talleres');
+                window.talleresData = talleresData;
+            } else {
+                console.error('talleresData no está definido');
+            }
+            
+            // Dar un poco más de tiempo y forzar la carga
+            setTimeout(() => {
+                if (window.talleresManager && window.talleresManager.talleres.length === 0) {
+                    console.log('Recargando talleres...');
+                    window.talleresManager.loadTalleres();
+                    window.talleresManager.mostrarTalleres();
+                }
+            }, 500);
+        });
+    </script>
 </body>
 
 </html>

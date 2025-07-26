@@ -189,6 +189,15 @@
         gap: 0.8rem;
     }
     
+    .galeria-item {
+        aspect-ratio: 4/3; /* Proporción más vertical para móviles */
+    }
+    
+    .galeria-image {
+        object-fit: cover;
+        object-position: center;
+    }
+    
     .galeria-pagination {
         gap: 0.5rem;
         margin-top: 1.5rem;
@@ -213,11 +222,16 @@
 
 @media (max-width: 480px) {
     .galeria-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr); /* Mantener 2 columnas incluso en pantallas muy pequeñas */
         gap: 0.5rem;
     }
     
     .galeria-item {
-        min-height: 250px;
+        aspect-ratio: 1; /* Cuadrado en pantallas muy pequeñas */
+    }
+    
+    .galeria-image {
+        object-fit: cover;
+        object-position: center;
     }
 }

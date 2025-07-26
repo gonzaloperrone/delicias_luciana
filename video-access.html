@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso a Videos - Delicias Luciana</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="img/luciana_logo.png">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/video-access.css">
+</head>
+<body>
+    <div class="video-access-container">
+        <!-- Formulario de acceso -->
+        <div class="access-form" id="accessForm">
+            <div class="form-header">
+                <img src="img/luciana_logo.png" alt="Delicias Luciana" class="logo">
+                <h2>Acceso a Taller Online</h2>
+                <p>Ingresa el código que recibiste por email para acceder a tu video</p>
+            </div>
+            
+            <form id="codeForm">
+                <div class="input-group">
+                    <label for="accessCode">
+                        <i class="fas fa-key"></i>
+                        Código de Acceso:
+                    </label>
+                    <input 
+                        type="text" 
+                        id="accessCode" 
+                        placeholder="Ej: DEMO1234" 
+                        required
+                        autocomplete="off"
+                        spellcheck="false"
+                    >
+                    <div class="input-hint">
+                        Ingresa el código que recibiste por email
+                    </div>
+                </div>
+                
+                <!-- Códigos de prueba -->
+                <div class="demo-codes">
+                    <h4>Códigos de Prueba:</h4>
+                    <div class="demo-codes-grid">
+                        <button type="button" class="btn-demo-code" onclick="fillDemoCode('DEMO1234')">
+                            <i class="fas fa-cupcake-candles"></i>
+                            <span>DEMO1234</span>
+                            <small>Cupcakes Gourmet</small>
+                        </button>
+                        <button type="button" class="btn-demo-code" onclick="fillDemoCode('MACARON01')">
+                            <i class="fas fa-cookie"></i>
+                            <span>MACARON01</span>
+                            <small>Macarons Franceses</small>
+                        </button>
+                        <button type="button" class="btn-demo-code" onclick="fillDemoCode('TORTAS99')">
+                            <i class="fas fa-birthday-cake"></i>
+                            <span>TORTAS99</span>
+                            <small>Tortas de Diseño</small>
+                        </button>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn-access">
+                    <i class="fas fa-play-circle"></i>
+                    Acceder al Video
+                </button>
+            </form>
+            
+            <div class="help-section">
+                <div class="help-item">
+                    <i class="fas fa-question-circle"></i>
+                    <span>¿No recibiste tu código?</span>
+                    <a href="https://wa.me/59898199850?text=Hola! No recibí el código de acceso de mi taller" target="_blank">
+                        Contáctanos por WhatsApp
+                    </a>
+                </div>
+                
+                <div class="help-item">
+                    <i class="fas fa-home"></i>
+                    <span>¿Quieres ver más talleres?</span>
+                    <a href="index.html">
+                        Volver al inicio
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reproductor de video -->
+        <div class="video-player" id="videoPlayer" style="display: none;">
+            <div class="player-header">
+                <button class="btn-back" onclick="showAccessForm()">
+                    <i class="fas fa-arrow-left"></i>
+                    Volver
+                </button>
+                <h3 id="courseTitle"></h3>
+            </div>
+            
+            <div class="video-container">
+                <video id="courseVideo" controls controlsList="nodownload" preload="metadata">
+                    <source src="" type="video/mp4">
+                    Tu navegador no soporta videos HTML5.
+                </video>
+                <div class="video-placeholder" id="videoPlaceholder">
+                    <div class="placeholder-content">
+                        <i class="fas fa-video"></i>
+                        <h4>Video del Taller</h4>
+                        <p>Este video estará disponible próximamente</p>
+                        <small>Mientras tanto, puedes descargar los materiales incluidos</small>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="course-info">
+                <div class="course-materials">
+                    <h4><i class="fas fa-download"></i> Materiales del Curso</h4>
+                    <div id="courseMaterials">
+                        <!-- Los materiales se cargarán dinámicamente -->
+                    </div>
+                </div>
+                
+                <div class="course-support">
+                    <h4><i class="fas fa-headset"></i> Soporte</h4>
+                    <p>¿Tienes dudas sobre el taller? ¡Estamos aquí para ayudarte!</p>
+                    <a href="https://wa.me/59898199850?text=Hola! Tengo una consulta sobre mi taller online" 
+                       target="_blank" 
+                       class="btn-support">
+                        <i class="fab fa-whatsapp"></i>
+                        Consultar por WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mensaje de error -->
+        <div class="error-message" id="errorMessage" style="display: none;">
+            <div class="error-content">
+                <i class="fas fa-exclamation-triangle"></i>
+                <h3>Código no válido</h3>
+                <p>El código ingresado no es válido o ha expirado.</p>
+                <button class="btn-retry" onclick="showAccessForm()">
+                    Intentar nuevamente
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/video-access.js"></script>
+</body>
+</html>

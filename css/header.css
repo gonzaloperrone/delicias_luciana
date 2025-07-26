@@ -33,7 +33,7 @@
 .header-right {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.5rem;
 }
 
 .nav {
@@ -130,12 +130,25 @@
         padding: 0.8rem 0;
     }
     
+    .header .container {
+        padding: 0 15px;
+    }
+    
     .logo-img {
         height: 40px;
     }
     
+    .header-right {
+        gap: 0.3rem;
+    }
+    
     .nav-toggle {
         display: flex;
+        order: 3; /* Hamburguesa al final */
+    }
+    
+    .carrito-icon {
+        order: 2; /* Carrito en el medio */
     }
     
     .nav {

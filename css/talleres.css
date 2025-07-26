@@ -25,29 +25,35 @@
 }
 
 .pagination-btn {
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-    color: var(--white);
+    background: #F8BBD9;
+    color: #333;
     border: none;
     padding: 10px 15px;
-    border-radius: var(--border-radius-small);
+    border-radius: 8px;
     cursor: pointer;
-    transition: var(--transition);
+    transition: all 0.3s ease;
     font-weight: 600;
     min-width: 40px;
+    box-shadow: 0 2px 8px rgba(248, 187, 217, 0.2);
 }
 
 .pagination-btn:hover:not(:disabled) {
-    box-shadow: 0 2px 8px rgba(228, 151, 168, 0.3);
+    background: #F48FB1;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(248, 187, 217, 0.3);
 }
 
 .pagination-btn:disabled {
     opacity: 0.5;
     cursor: not-allowed;
+    background: #E0E0E0;
+    color: #999;
 }
 
 .pagination-btn.active {
-    background: var(--accent-color);
-    box-shadow: 0 4px 12px rgba(196, 86, 122, 0.4);
+    background: #E91E63;
+    color: white;
+    box-shadow: 0 4px 12px rgba(233, 30, 99, 0.3);
 }
 
 .pagination-info {
@@ -57,13 +63,13 @@
 }
 
 .taller-card {
-    background: var(--white);
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow-soft);
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
     overflow: hidden;
-    transition: var(--transition);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
-    border: 1px solid var(--border-light);
+    border: 2px solid rgba(248, 187, 217, 0.1);
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -75,147 +81,198 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+    height: 3px;
+    background: #F8BBD9;
+    border-radius: 16px 16px 0 0;
 }
 
 .taller-card::after {
     content: '';
     position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 30px;
-    height: 30px;
-    background: radial-gradient(circle, rgba(228, 151, 168, 0.1) 0%, transparent 70%);
-    border-radius: 50%;
-    transition: var(--transition);
+    top: 3px;
+    left: 3px;
+    right: 3px;
+    bottom: 3px;
+    background: rgba(248, 187, 217, 0.02);
+    border-radius: 14px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .taller-card:hover {
-    box-shadow: 0 6px 20px rgba(228, 151, 168, 0.15);
-    border-color: var(--primary-color);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(248, 187, 217, 0.15);
+    border-color: rgba(248, 187, 217, 0.3);
 }
 
 .taller-card:hover::after {
-    background: radial-gradient(circle, rgba(228, 151, 168, 0.15) 0%, transparent 70%);
+    opacity: 1;
+}
+
+.taller-image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px 16px 0 0;
+}
+
+.taller-image-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(248, 187, 217, 0.1);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.taller-card:hover .taller-image-container::before {
+    opacity: 1;
 }
 
 .taller-image {
     width: 100%;
-    height: 250px;
+    height: 220px;
     object-fit: cover;
     transition: var(--transition);
 }
 
 .taller-card:hover .taller-image {
-    transform: scale(1.02);
+    transform: scale(1.05);
 }
 
 .taller-content {
-    padding: 1.5rem;
-    background: linear-gradient(180deg, var(--white) 0%, var(--cream) 100%);
-    position: relative;
+    padding: 24px;
     display: flex;
     flex-direction: column;
     flex: 1;
-}
-
-.taller-content::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 1rem;
-    right: 1rem;
-    height: 1px;
-    background: linear-gradient(90deg, transparent 0%, var(--primary-color) 50%, transparent 100%);
-    opacity: 0.3;
-}
-
-.taller-description {
-    color: var(--text-light);
-    margin-bottom: 1rem;
-    font-size: 0.95rem;
-    line-height: 1.5;
-    flex: 1;
+    position: relative;
 }
 
 .taller-title {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    color: var(--primary-color);
-    font-weight: 600;
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+    color: #2C3E50;
+    font-weight: 700;
+    line-height: 1.3;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    position: relative;
 }
 
-.taller-footer {
+.taller-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background: #F8BBD9;
+    border-radius: 1px;
+}
+
+.taller-description {
+    color: #4A5568;
+    margin-bottom: 1.25rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    flex: 1;
+    position: relative;
+    padding-left: 15px;
+}
+
+.taller-description::before {
+    content: '"';
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 2rem;
+    color: #F8BBD9;
+    opacity: 0.5;
+    font-family: serif;
+    line-height: 1;
+}
+
+.taller-info {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: auto;
-    padding-top: 1.5rem;
-    border-top: 1px solid rgba(228, 151, 168, 0.1);
-    position: relative;
-    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 16px 20px;
+    background: rgba(248, 187, 217, 0.08);
+    border-radius: 12px;
+    border: 1px solid rgba(248, 187, 217, 0.2);
+    backdrop-filter: blur(10px);
 }
 
-.taller-footer::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 30px;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
-}
-
-.taller-precio {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--accent-color);
-    font-family: 'Lato', sans-serif;
-    text-shadow: 0 1px 2px rgba(196, 86, 122, 0.1);
-}
-
-.taller-footer .btn-comprar {
-    background: rgba(226, 135, 160, 0.08);
-    color: var(--primary-color);
-    border: 1px solid rgba(226, 135, 160, 0.15);
-    padding: 8px 16px;
-    border-radius: 20px;
-    cursor: pointer;
+.taller-duration {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #2D3748;
+    font-size: 0.9rem;
     font-weight: 500;
-    font-size: 0.85rem;
-    transition: all 0.4s ease;
+}
+
+.taller-duration i {
+    color: #F48FB1;
+    font-size: 1rem;
+}
+
+.taller-price {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #E91E63;
+    font-family: 'Lato', sans-serif;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.btn-comprar {
+    width: 100%;
+    background: #F8BBD9;
+    color: #333;
+    border: none;
+    padding: 14px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: auto;
+    box-shadow: 0 4px 15px rgba(248, 187, 217, 0.25);
     position: relative;
     overflow: hidden;
 }
 
-.taller-footer .btn-comprar::before {
+.btn-comprar::before {
     content: '';
     position: absolute;
     top: 0;
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(226, 135, 160, 0.1), transparent);
-    transition: left 0.8s ease;
+    background: rgba(255, 255, 255, 0.2);
+    transition: left 0.5s ease;
 }
 
-.taller-footer .btn-comprar:hover::before {
+.btn-comprar:hover::before {
     left: 100%;
 }
 
-.taller-footer .btn-comprar:hover {
-    background: rgba(226, 135, 160, 0.12);
-    color: var(--accent-color);
-    border-color: rgba(226, 135, 160, 0.25);
-    transform: translateY(-1px);
-    box-shadow: 0 2px 8px rgba(226, 135, 160, 0.15);
+.btn-comprar:hover {
+    background: #F48FB1;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(248, 187, 217, 0.4);
 }
 
-.taller-footer .btn-comprar:active {
-    transform: translateY(0);
-    box-shadow: 0 1px 4px rgba(226, 135, 160, 0.1);
+.btn-comprar:active {
+    transform: translateY(-1px);
 }
 
 /* Responsive */
@@ -309,5 +366,400 @@
         padding: 6px 10px !important;
         font-size: 0.85rem !important;
         height: 35px !important;
+    }
+}
+
+/* =====================================
+   MODALES TALLERES
+===================================== */
+
+/* Modal para detalles del taller */
+.modal-taller {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.modal-taller.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-taller-content {
+    background: white;
+    border-radius: 20px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+    transform: scale(0.8) translateY(30px);
+    transition: all 0.3s ease;
+}
+
+.modal-taller.show .modal-taller-content {
+    transform: scale(1) translateY(0);
+}
+
+.modal-taller-header {
+    position: relative;
+    padding: 0;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 20px 20px 0 0;
+    overflow: hidden;
+}
+
+.modal-taller-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    opacity: 0.9;
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.modal-close:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.modal-taller-title {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    color: white;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.modal-taller-body {
+    padding: 30px;
+}
+
+.modal-taller-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.modal-info-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.modal-info-item i {
+    color: var(--primary-color);
+    width: 20px;
+    font-size: 1.1rem;
+}
+
+.modal-taller-incluye {
+    margin-bottom: 25px;
+}
+
+.modal-taller-incluye h4 {
+    color: var(--primary-color);
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.1rem;
+}
+
+.modal-incluye-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+}
+
+.modal-incluye-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #666;
+    font-size: 0.9rem;
+    padding: 8px 12px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 3px solid var(--primary-color);
+}
+
+.modal-incluye-item i {
+    color: #4caf50;
+    font-size: 0.9rem;
+    min-width: 14px;
+}
+
+.modal-taller-footer {
+    border-top: 1px solid #f0f0f0;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f8f9fa;
+    border-radius: 0 0 20px 20px;
+}
+
+.modal-precio {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.modal-precio-label {
+    color: #666;
+    font-size: 0.85rem;
+    margin-bottom: 2px;
+    font-family: 'Lato', sans-serif;
+}
+
+.modal-precio-valor {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    font-weight: 700;
+    font-family: 'Lato', sans-serif;
+}
+
+.btn-comprar-modal {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 8px 20px rgba(226, 135, 160, 0.3);
+}
+
+.btn-comprar-modal:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(226, 135, 160, 0.4);
+}
+
+/* Modal de confirmación */
+.modal-confirmacion {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10001;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.modal-confirmacion.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-confirmacion-content {
+    background: white;
+    border-radius: 20px;
+    max-width: 450px;
+    width: 90%;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+    transform: scale(0.8) translateY(30px);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.modal-confirmacion.show .modal-confirmacion-content {
+    transform: scale(1) translateY(0);
+}
+
+.modal-confirmacion-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    padding: 30px;
+    text-align: center;
+    color: white;
+}
+
+.modal-confirmacion-header i {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+
+.modal-confirmacion-header h3 {
+    margin: 0;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.modal-confirmacion-body {
+    padding: 30px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 600;
+    font-family: 'Lato', sans-serif;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: 'Lato', sans-serif;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(226, 135, 160, 0.1);
+}
+
+.email-info {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.email-info i {
+    color: var(--primary-color);
+    margin-right: 8px;
+}
+
+.email-info p {
+    margin: 0;
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.modal-confirmacion-footer {
+    padding: 0 30px 30px;
+    display: flex;
+    gap: 15px;
+}
+
+.btn-cancelar, .btn-confirmar {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Lato', sans-serif;
+}
+
+.btn-cancelar {
+    background: #f5f5f5;
+    color: #666;
+}
+
+.btn-cancelar:hover {
+    background: #e0e0e0;
+}
+
+.btn-confirmar {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    box-shadow: 0 4px 15px rgba(226, 135, 160, 0.3);
+}
+
+.btn-confirmar:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(226, 135, 160, 0.4);
+}
+
+.btn-confirmar:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Responsive para modales */
+@media (max-width: 768px) {
+    .modal-taller-content,
+    .modal-confirmacion-content {
+        width: 95%;
+        margin: 20px;
+    }
+    
+    .modal-taller-info {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .modal-incluye-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-taller-footer {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .modal-confirmacion-footer {
+        flex-direction: column;
     }
 }
